@@ -1,6 +1,7 @@
 # Lock Breaker
 
 Lock Breaker gives arcade players a quick timing challenge they can learn in one round. A needle spins around a dial. Press Space inside the green target three times to open the lock. Three misses jam it.
+
 [Play Lock Breaker in your browser](https://crazyphrog.github.io/Daily-LockBreaker/)
 
 ## Play in a browser
@@ -11,9 +12,11 @@ Choose **Practice** for a slower needle and unlimited misses. Practice does not 
 
 ### Run the web build locally
 
-Install Python 3 and run this from the repository root. On macOS or Linux, use `python3` in place of `py`.
+Install Git and Python 3. Clone the repository and run the local server. On macOS or Linux, use `python3` in place of `py`.
 
 ```powershell
+git clone https://github.com/CrazyPhrog/Daily-LockBreaker.git
+cd Daily-LockBreaker
 py -m http.server 8000
 ```
 
@@ -57,8 +60,17 @@ The checks exercise the three-hit win, three-miss loss, angle wraparound, and in
 - `docs/play.mjs` handles browser input, drawing, and on-screen feedback.
 - `docs/round.mjs` contains the browser rules and score storage helpers.
 - `tests/browser.test.mjs` exercises the browser rules without a DOM.
-
 - `LockRound.cs` tracks timing, hits, attempts, and outcomes.
 - `LockBreakerGame.cs` handles keyboard input and draws the dial and indicators.
 - `tests/LockBreaker.Checks` runs the rules without opening a window.
 - [Sprint 1 plan and issue drafts](docs/sprint-1.md)
+
+## Project links
+
+- [Report a bug](https://github.com/CrazyPhrog/Daily-LockBreaker/issues)
+- [Contribution guide](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
+- [Short demo and implementation notes](docs/demo.md)
+- [MIT license](LICENSE)
+
+ChatGPT assisted with drafting and refining the code, tests, and documentation. The interface is drawn in code and uses no external art assets.
