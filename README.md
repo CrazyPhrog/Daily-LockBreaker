@@ -62,5 +62,3 @@ The checks exercise the three-hit win, three-miss loss, angle wraparound, and in
 - `LockBreakerGame.cs` handles keyboard input and draws the dial and indicators.
 - `tests/LockBreaker.Checks` runs the rules without opening a window.
 - [Sprint 1 plan and issue drafts](docs/sprint-1.md)
-
-ChatGPT assisted with drafting the prototype, checks, and documentation. The dial and interface are drawn in code.
