@@ -34,9 +34,13 @@ export function nextLock(round) {
     return { ...start(round.practice), opened: round.opened };
 }
 
+const BestScoreKey = "lock-breaker.best";
+
 export function readBest(storage) {
     try {
-        const score = Number(storage().getItem("lock-breaker.best"));
+        const value = storage().getItem(BestScoreKey);
+        if (typeof value !== "string" || !/^\d+$/.test(value)) return 0;
+        const score = Number(value);
         return Number.isSafeInteger(score) && score >= 0 ? score : 0;
     } catch {
         return 0;
@@ -46,7 +50,7 @@ export function readBest(storage) {
 export function saveBest(storage, score) {
     if (!Number.isSafeInteger(score) || score < 0) return false;
     try {
-        storage().setItem("lock-breaker.best", String(score));
+        storage().setItem(BestScoreKey, String(score));
         return true;
     } catch {
         return false;
