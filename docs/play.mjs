@@ -22,17 +22,22 @@ function refresh(message) {
     reset.hidden = !round;
 }
 
+function setRound(newRound, message) {
+    round = newRound;
+    lastTime = performance.now();
+    refresh(message);
+    action.focus();
+}
+
 function begin(isPractice) {
-    round = start(isPractice);
-    refresh("Watch the green target.");
+    setRound(start(isPractice), "Watch the green target.");
 }
 
 function activate() {
     if (!round || round.state === "jammed") {
         begin(false);
     } else if (round.state === "opened") {
-        round = nextLock(round);
-        refresh("Next lock ready.");
+        setRound(nextLock(round), "Next lock ready.");
     } else {
         let message = attempt(round);
         if (round.state === "jammed") message = "Lock jammed. Try again.";
@@ -76,9 +81,7 @@ if (ctx) {
     action.addEventListener("click", activate);
     practice.addEventListener("click", () => begin(true));
     reset.addEventListener("click", () => {
-        round = null;
-        refresh("Choose Start or Practice.");
-        action.focus();
+        setRound(null, "Choose Start or Practice.");
     });
     document.addEventListener("keydown", event => {
         if (event.code !== "Space") return;
