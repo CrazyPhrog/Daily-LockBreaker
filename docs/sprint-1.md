@@ -1,10 +1,10 @@
 # Sprint 1 · Planning and Setup
 
-**Owner**: Axel Carmona  
+**Owner** Axel Carmona  
 **Timebox** Seven days  
 **Goal** A new player can launch the game, open or jam one lock, and retry without restarting the application.
 
-**Problem and users** Players who want a short timing challenge need a game with simple controls and fast retries.
+**Problem and users** Arcade players who want a short timing challenge need a game with simple controls and fast retries.
 
 **In scope** One rotating dial, one moving target, three hits to win, three misses to lose, and a retry flow. The prototype tracks hits and attempts in memory.
 
