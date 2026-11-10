@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lock Breaker</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #101925; color: #f1f5ff; font: 17px system-ui, sans-serif; }
+  main { width: min(100%, 480px); padding: 22px; text-align: center; }
+  h1 { margin: 0; letter-spacing: .08em; }
+  canvas { display: block; width: min(100%, 340px); height: auto; margin: auto; }
+  button { padding: .65rem 1rem; margin: .2rem; border: 0; border-radius: .5rem; background: #70e7b0; color: #102519; font: inherit; font-weight: 700; cursor: pointer; }
+  button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+  #status { min-height: 1.5em; color: #f9c392; }
+</style>
+<main>
+  <h1>LOCK BREAKER</h1>
+  <p>Press Space or tap when the needle enters the green arc.</p>
+  <canvas width="340" height="340" aria-label="Lock dial with rotating needle and target"></canvas>
+  <p id="stats"></p>
+  <p id="status" role="status">Choose Start or Practice.</p>
+  <button id="action">Start</button>
+  <button id="practice">Practice</button>
+  <button id="reset" hidden>Menu</button>
+  <noscript>Enable JavaScript to play.</noscript>
+</main>
+<script type="module" src="./play.mjs"></script>
+</html>
