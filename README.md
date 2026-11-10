@@ -1,6 +1,7 @@
 # Lock Breaker
 
 Lock Breaker gives arcade players a quick timing challenge they can learn in one round. A needle spins around a dial. Press Space inside the green target three times to open the lock. Three misses jam it.
+[Play Lock Breaker in your browser](https://crazyphrog.github.io/Daily-LockBreaker/)
 
 ## Run
 
